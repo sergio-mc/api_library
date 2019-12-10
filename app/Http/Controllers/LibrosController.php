@@ -29,11 +29,6 @@ class LibrosController extends Controller
     public function getLibrosParam(Request $request)
     {
         
-        /*$genero2 = $request->input('genero');
-        $autor2 = $request->input('autor');
-        return print_r($genero2.$autor2);
-        die;*/
-        
         $genero = $request->genero;
         $autor = $request->autor;
 

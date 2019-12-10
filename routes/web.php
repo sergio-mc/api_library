@@ -21,8 +21,8 @@ Route::get('/filtro', function (){
     return view('filter');
 });
 
-Route::get('/librosFiltro','LibrosController@getLibrosParam');
 
-//Route::get('/filtro', 'LibrosController@getLibrosParam')->name('filtro');
+
+Route::get('/filtradoLibro', 'LibrosController@getLibrosParam');
 
 

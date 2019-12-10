@@ -1,9 +1,12 @@
+@extends('layouts.app')
+
+@section('content')
 
 <div class="container">
-    <div class="row justify-content-center">
     <h1>Filtrado de genero o autor</h1>
+    <div class="row justify-content-center">
     {{csrf_field()}}
-    <form method="post" action="LibrosController@getLibrosParam">
+    <form method="get" action="{{url('filtradoLibro')}}">
     Genero: <input id='genero' type="text" name="genero"><br>
     <br>
     Autor: <input id='autor' type="text" name="autor"><br>
@@ -12,4 +15,4 @@
     </form>
     </div>
 </div>
-
+@endsection
