@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Auth::routes();
 
 Route::get('/filtro', function (){
@@ -23,6 +27,12 @@ Route::get('/filtro', function (){
 
 
 
+
+
+// Ruta para la vista del filtrado de libros pública
 Route::get('/filtradoLibro', 'LibrosController@getLibrosParam');
+
+// Ruta para la vista de prestamosDevoluciones sacadas por el id del usuario logeado
+Route::get('/prestamosDevoluciones/{id}', 'ServiciosController@getAll');
 
 

@@ -66,4 +66,23 @@ class ServiciosController extends Controller
             return response()->json($response);
         }
     }
+
+    // Se obtienen todos los prestamos/devoluciones por id del usuario logeado
+    public function getAll($id)
+    {
+        $user = User::find($id);
+
+        if(empty($user))
+        {
+            $response = array('error_code' => 404, 'error_msg' => 'No existe usuario logeado');
+            return response()->json($response);
+        }
+        else
+        {
+            $prestamosDevoluciones = Libro_User::where('user_id','=',$id)->get();
+            return view('prestamosDevoluciones',['prestamosDevoluciones' => $prestamosDevoluciones]);
+        }
+
+        
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UsuariosController extends Controller
 {
@@ -33,7 +34,7 @@ class UsuariosController extends Controller
         $usuario = new User;
         $usuario->name = $request->name;
         $usuario->email = $request->email;
-        $usuario->password = $request->password;
+        $usuario->password = Hash::make($request->password);
         $usuario->api_token = hash('sha256', $request->api_token);
 
         if(!empty($usuario->name) && !empty($usuario->email) && !empty($usuario->password) && !empty($usuario->api_token))

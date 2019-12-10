@@ -58,6 +58,10 @@
                 text-transform: uppercase;
             }
 
+            .links2 {
+                color: blue;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -80,8 +84,8 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title m-b-md " >
+                    Library
                 </div>
 
                 <div class="links">
@@ -91,8 +95,11 @@
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a><br><br><br>
                 </div>
+                    <div class="links">
+                    <a href="{{url('prestamosDevoluciones/'.Auth::user()->id)}}"><p class="links2">Prestamos y Devoluciones</p></a>
+                    </div>
             </div>
         </div>
     </body>
