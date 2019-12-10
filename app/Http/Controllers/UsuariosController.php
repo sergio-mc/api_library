@@ -55,7 +55,7 @@ class UsuariosController extends Controller
     {
         $name = $request->name;
         $email = $request->email;
-        $password = $request->password;
+        $password = Hash::make($request->password);
 
         $usuario = User::find($request->id);
 
